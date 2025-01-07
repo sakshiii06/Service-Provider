@@ -1,0 +1,97 @@
+<!-- Services Section -->
+  <section class="page-section" id="services">
+    <div class="container">
+      <h2 class="text-center mt-0">At Your Service</h2>
+      <hr class="divider my-4">
+      <a href="/dan/addForm" class="btn btn-secondary my-2">Add</a>
+        <div class="table-responsive">
+          <table class="table table-hover table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope = "col">Id</th>
+                <th scope = "col">First</th>
+                <th scope = "col">Last</th>
+                <th scope = "col">Position</th>
+                <th scope = "col">Company</th>
+                <th scope = "col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each providers}}
+              <tr>
+                <td scope = "row">{{ id }}</td>
+                <td scope = "row">{{ firstname }}</td>
+                <td scope = "row">{{ lastname }}</td>
+                <td scope = "row">{{ position }}</td>
+                <td scope = "row">{{ company.company_name }}</td>
+                <td scope = "row"><a href="/dan/details/{{ id }}" class="btn btn-info btn-sm">More info...</a>
+                <a href="/dan/edit/{{ id }}" class="btn btn-secondary btn-sm">Edit</a>
+                <a href="#my{{id}}" class="btn btn-danger btn-sm" data-toggle="modal">Delete</a>
+
+              <!-- Modal Window - Confirmation -->
+              <div id="my{{id}}" class="modal fade">
+                <div class="modal-dialog modal-confirm">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Are you sure?</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body text-center">
+                      <p style="font-size: 14px;">Do you really want to delete {{company.company_name}}?<br>
+                        This process cannot be undone.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-info btn-md" data-dismiss="modal">Cancel</button>
+                      <a href="/dan/delete/{{id}}" type="button" class="btn btn-danger btn-md">Delete</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          {{/each}}
+            </tbody>
+
+          </table>
+
+        </div>
+    </div>
+  </section>
+
+{{!-- <!-- Services Section -->
+  <section class="page-section" id="services">
+    <div class="container">
+      <h2 class="text-center mt-0">At Your Service</h2>
+      <hr class="divider my-4">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+            <h3 class="h4 mb-2">Sturdy Themes</h3>
+            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
+            <h3 class="h4 mb-2">Up to Date</h3>
+            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
+            <h3 class="h4 mb-2">Ready to Publish</h3>
+            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="mt-5">
+            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
+            <h3 class="h4 mb-2">Made with Love</h3>
+            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> --}}
